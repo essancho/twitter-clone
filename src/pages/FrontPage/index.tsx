@@ -1,5 +1,4 @@
 import React from 'react';
-import SidebarLeft from '../../modules/SidebarLeft';
 import { createUser } from '../../store/Auth/authSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
@@ -11,7 +10,6 @@ const FrontPage = () => {
   };
   return (
     <>
-      <SidebarLeft />
       <div>{user}</div>
       <button onClick={handleSubmit}>User</button>
     </>
