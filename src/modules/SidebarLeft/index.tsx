@@ -5,7 +5,7 @@ import { TwitterLogo } from 'phosphor-react';
 import { SIDEBAR_LINKS } from './data';
 import SidebarItem from './SidebarItem';
 
-import { StyledTop } from '../../Styles/global';
+import { StyledTop } from '../../styles/global';
 import { StyledSider } from './Styles/siderLeft';
 
 const SidebarLeft: FC = () => {

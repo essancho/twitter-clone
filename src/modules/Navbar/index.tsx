@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { StyledTop } from '../../Styles/global';
+import { StyledTop } from '../../styles/global';
 import { StyledNavbar } from './Styles/navbarStyles';
 
 type Props = {};
