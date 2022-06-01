@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTop } from '../../Styles/global';
+import { StyledTop } from '../../styles/global';
 
 type Props = {};
 

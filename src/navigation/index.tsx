@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './modules/Navbar';
-import SidebarLeft from './modules/SidebarLeft';
-import SidebarRight from './modules/SidebarRight';
+import Navbar from '../modules/Navbar';
+import SidebarLeft from '../modules/SidebarLeft';
+import SidebarRight from '../modules/SidebarRight';
 import {
   BookmarksPage,
   ExplorePage,
@@ -12,7 +12,7 @@ import {
   MessagesPage,
   NotificationsPage,
   ProfilePage,
-} from './pages';
+} from '../pages';
 import {
   Container,
   Layout,
@@ -20,11 +20,14 @@ import {
   StyledLeft,
   StyledMain,
   StyledRight,
-} from './Styles/global';
+} from '../styles/global';
 
 const Navigation = () => {
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FrontPage />} />
+      </Routes>
       <Container>
         <Layout>
           <StyledLeft>
@@ -34,7 +37,6 @@ const Navigation = () => {
             <StyledInnerContainer>
               <Navbar />
               <Routes>
-                <Route path="/" element={<FrontPage />} />
                 <Route path="/home" element={<MainPage />} />
                 <Route path="/explore" element={<ExplorePage />} />
                 <Route path="/messages" element={<MessagesPage />} />
