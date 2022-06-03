@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { LinkInterface } from './data';
+import { LinkInterface } from '../../navigation/routes';
 import * as S from './styles';
 
 const SidebarItem = ({ name, Icon, path }: LinkInterface) => {

@@ -3,15 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from '../../modules/Navbar';
 import SidebarLeft from '../../modules/SidebarLeft';
 import SidebarRight from '../../modules/SidebarRight';
-import {
-  MainPage,
-  ExplorePage,
-  MessagesPage,
-  BookmarksPage,
-  ListPage,
-  ProfilePage,
-  NotificationsPage,
-} from '../../pages';
+import { NAV_ROUTES } from '../../navigation/routes';
+
 import {
   Container,
   Layout,
@@ -21,26 +14,20 @@ import {
   StyledRight,
 } from '../../styles/global';
 
-interface Props {}
-
-const MainLayout: React.FC = (props: Props) => {
+const MainLayout: React.FC = (): JSX.Element => {
   return (
     <Container>
       <Layout>
         <StyledLeft>
-          <SidebarLeft />
+          <SidebarLeft NAV_ROUTES={NAV_ROUTES} />
         </StyledLeft>
         <StyledMain>
           <StyledInnerContainer>
             <Navbar />
             <Routes>
-              <Route path="/home" element={<MainPage />} />
-              <Route path="/explore" element={<ExplorePage />} />
-              <Route path="/messages" element={<MessagesPage />} />
-              <Route path="/bookmarks" element={<BookmarksPage />} />
-              <Route path="/lists" element={<ListPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/notifications" element={<NotificationsPage />} />
+              {NAV_ROUTES.map(({ path, Component }) => (
+                <Route path={path} element={Component && <Component />} />
+              ))}
             </Routes>
           </StyledInnerContainer>
         </StyledMain>
