@@ -1,18 +1,17 @@
+import { TwitterLogo } from 'phosphor-react';
 import React from 'react';
-import { createUser } from '../../store/Auth/authSlice';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import FrontRight from '../../modules/Front/FrontRight';
+
+import { StyledFrontLeft, StyledFrontWrapper } from './Styles/frontPage';
 
 const FrontPage = () => {
-  const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.users.user);
-  const handleSubmit = () => {
-    dispatch(createUser());
-  };
   return (
-    <>
-      <div>{user}</div>
-      <button onClick={handleSubmit}>User</button>
-    </>
+    <StyledFrontWrapper>
+      <StyledFrontLeft>
+        <TwitterLogo color="#ffffff" weight="fill" size={260} />
+      </StyledFrontLeft>
+      <FrontRight />
+    </StyledFrontWrapper>
   );
 };
 
