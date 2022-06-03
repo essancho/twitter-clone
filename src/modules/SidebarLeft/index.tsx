@@ -6,11 +6,11 @@ import { SIDEBAR_LINKS } from './data';
 import SidebarItem from './SidebarItem';
 
 import { StyledTop } from '../../styles/global';
-import { StyledSider } from './Styles/siderLeft';
+import * as S from './styles';
 
 const SidebarLeft: FC = () => {
   return (
-    <StyledSider>
+    <S.Sider>
       <StyledTop>
         <Link to="/home">
           <TwitterLogo size={38} weight="fill" style={{ marginLeft: 15 }} />
@@ -19,7 +19,7 @@ const SidebarLeft: FC = () => {
       {SIDEBAR_LINKS.map(({ name, path, Icon, id }) => (
         <SidebarItem key={id} name={name} path={path} Icon={Icon} id={id} />
       ))}
-    </StyledSider>
+    </S.Sider>
   );
 };
 

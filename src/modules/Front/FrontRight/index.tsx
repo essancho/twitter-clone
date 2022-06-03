@@ -1,19 +1,15 @@
 import React from 'react';
-import {
-  StyledFrontButton,
-  StyledFrontRight,
-  StyledFrontText,
-} from './Styles/frontRight';
+import * as S from './styles';
 
 type Props = {};
 
 const FrontRight = (props: Props) => {
   return (
-    <StyledFrontRight>
-      <StyledFrontText size="62px" weight={700}>
+    <S.FrontRight>
+      <S.FrontText size="62px" weight={700}>
         FOLLOW YOUR INTERESTS
-      </StyledFrontText>
-      <StyledFrontText size="42px">JOIN TWITTER RIGHT NOW</StyledFrontText>
+      </S.FrontText>
+      <S.FrontText size="42px">JOIN TWITTER RIGHT NOW</S.FrontText>
       <div
         style={{
           display: 'flex',
@@ -21,10 +17,10 @@ const FrontRight = (props: Props) => {
           justifyContent: 'space-between',
         }}
       >
-        <StyledFrontButton color="#89a6fd">Register</StyledFrontButton>
-        <StyledFrontButton color="#d6c7c7">Login</StyledFrontButton>
+        <S.FrontButton color="#89a6fd">Register</S.FrontButton>
+        <S.FrontButton color="#d6c7c7">Login</S.FrontButton>
       </div>
-    </StyledFrontRight>
+    </S.FrontRight>
   );
 };
 

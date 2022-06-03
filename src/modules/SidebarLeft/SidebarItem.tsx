@@ -1,17 +1,15 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { LinkInterface } from './data';
-import { StyledLink, StyledLinkText } from './Styles/siderLeft';
+import * as S from './styles';
 
 const SidebarItem = ({ name, Icon, path }: LinkInterface) => {
   const location = useLocation();
   return (
-    <StyledLink to={path}>
+    <S.SLink to={path}>
       <Icon size={30} weight={path === location.pathname ? 'fill' : 'light'} />
-      <StyledLinkText active={path === location.pathname}>
-        {name}
-      </StyledLinkText>
-    </StyledLink>
+      <S.LinkText active={path === location.pathname}>{name}</S.LinkText>
+    </S.SLink>
   );
 };
 

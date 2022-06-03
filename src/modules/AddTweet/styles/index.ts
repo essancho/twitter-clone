@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const StyledTweetWrapper = styled.div`
+export const TweetWrapper = styled.div`
   display: flex;
   border-bottom: 1px solid white;
   height: 200px;
 `;
-export const StyledTweetForm = styled.div`
+export const TweetForm = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 20px;
 `;
-export const StyledTweetAvatar = styled.div`
+export const TweetAvatar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@ export const StyledTweetAvatar = styled.div`
   border-radius: 100%;
   background-color: darkblue;
 `;
-export const StyledTweetInput = styled.input`
+export const TweetInput = styled.input`
   color: white;
   height: 50px;
   width: 100%;
