@@ -2,16 +2,16 @@ import { TwitterLogo } from 'phosphor-react';
 import React from 'react';
 import FrontRight from '../../modules/Front/FrontRight';
 
-import { StyledFrontLeft, StyledFrontWrapper } from './Styles/frontPage';
+import * as S from './styles';
 
 const FrontPage = () => {
   return (
-    <StyledFrontWrapper>
-      <StyledFrontLeft>
+    <S.FrontWrapper>
+      <S.FrontLeft>
         <TwitterLogo color="#ffffff" weight="fill" size={260} />
-      </StyledFrontLeft>
+      </S.FrontLeft>
       <FrontRight />
-    </StyledFrontWrapper>
+    </S.FrontWrapper>
   );
 };
 

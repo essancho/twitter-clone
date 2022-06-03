@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import bg from '../../../assets/front-bg.png';
-export const StyledFrontWrapper = styled.div`
+export const FrontWrapper = styled.div`
   display: flex;
   height: 100vh;
 `;
-export const StyledFrontLeft = styled.div`
+export const FrontLeft = styled.div`
   width: 50%;
   background-image: url(${bg});
   display: grid;
@@ -12,6 +12,6 @@ export const StyledFrontLeft = styled.div`
   justify-content: center;
 `;
 
-export const StyledFrontImg = styled.img`
+export const FrontImg = styled.img`
   width: 520px;
 `;

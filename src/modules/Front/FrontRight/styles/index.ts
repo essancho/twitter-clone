@@ -6,7 +6,7 @@ interface Props {
 interface ButtonProps {
   color: string;
 }
-export const StyledFrontRight = styled.div`
+export const FrontRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,13 +14,13 @@ export const StyledFrontRight = styled.div`
   padding: 50px;
 `;
 
-export const StyledFrontText = styled.span`
+export const FrontText = styled.span`
   font-size: ${(props: Props) => props.size};
   font-weight: ${(props: Props) => props.weight};
   margin: 30px 0;
 `;
 
-export const StyledFrontButton = styled.button`
+export const FrontButton = styled.button`
   width: 320px;
   padding: 20px;
   background: none;

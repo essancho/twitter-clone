@@ -5,13 +5,13 @@ interface TextInterface {
   readonly active: boolean;
 }
 
-export const StyledSider = styled.div`
+export const Sider = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 22px;
 `;
 
-export const StyledLink = styled(Link)`
+export const SLink = styled(Link)`
   text-decoration: none;
   color: white;
   height: 40px;
@@ -26,7 +26,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const StyledLinkText = styled.span<TextInterface>`
+export const LinkText = styled.span<TextInterface>`
   padding-left: 15px;
   font-weight: ${(props) => (props.active ? 800 : 400)};
 `;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { StyledTop } from '../../styles/global';
-import { StyledNavbar } from './Styles/navbarStyles';
+import * as S from './styles';
 
 type Props = {};
 
@@ -39,7 +39,7 @@ const Navbar = (props: Props) => {
   return (
     <>
       <StyledTop>
-        <StyledNavbar>{title}</StyledNavbar>
+        <S.Navbar>{title}</S.Navbar>
       </StyledTop>
     </>
   );
