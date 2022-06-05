@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AuthModal from '../AuthModal';
 import * as S from './styles';
 
 type Props = {};
 
 const FrontRight = (props: Props) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [type, setType] = useState<string>('login');
+  const handleModal = (authType: string): void => {
+    setOpen(!open);
+    setType(authType);
+  };
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
+
   return (
     <S.FrontRight>
       <S.FrontText size="62px" weight={700}>
@@ -17,9 +28,14 @@ const FrontRight = (props: Props) => {
           justifyContent: 'space-between',
         }}
       >
-        <S.FrontButton color="#89a6fd">Register</S.FrontButton>
-        <S.FrontButton color="#d6c7c7">Login</S.FrontButton>
+        <S.FrontButton onClick={() => handleModal('register')} color="#89a6fd">
+          Register
+        </S.FrontButton>
+        <S.FrontButton onClick={() => handleModal('login')} color="#d6c7c7">
+          Login
+        </S.FrontButton>
       </div>
+      <AuthModal open={open} handleCloseModal={handleCloseModal} type={type} />
     </S.FrontRight>
   );
 };
