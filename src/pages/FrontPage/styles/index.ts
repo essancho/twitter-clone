@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bg from '../../../assets/front-bg.png';
+import bg from 'assets/front-bg.png';
 export const FrontWrapper = styled.div`
   display: flex;
   height: 100vh;

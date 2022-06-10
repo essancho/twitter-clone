@@ -4,7 +4,8 @@ interface Props {
   weight?: number;
 }
 interface ButtonProps {
-  color: string;
+  variant: string;
+  theme: any;
 }
 export const FrontRight = styled.div`
   display: flex;
@@ -24,9 +25,16 @@ export const FrontButton = styled.button`
   width: 320px;
   padding: 20px;
   background: none;
-  border: 1px solid ${(props: ButtonProps) => props.color};
+  border: 1px solid
+    ${(props: ButtonProps) => {
+      return props.variant === 'primary'
+        ? props.theme.accent
+        : props.theme.light;
+    }};
   border-radius: 20px;
-  color: ${(props: ButtonProps) => props.color};
+  color: ${(props: ButtonProps) => {
+    return props.variant === 'primary' ? props.theme.accent : props.theme.light;
+  }};
   font-weight: 700;
   &:hover {
     background-color: #fff;
