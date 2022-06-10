@@ -5,10 +5,10 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        color: white;
+        color: #F5F5F5;
     }
     body {
-        background-color: black;
+        background-color: #0A0A0A;
         font-family: 'Noto Sans', sans-serif;
     }
 `;

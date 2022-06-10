@@ -28,10 +28,13 @@ const FrontRight = (props: Props) => {
           justifyContent: 'space-between',
         }}
       >
-        <S.FrontButton onClick={() => handleModal('register')} color="#89a6fd">
+        <S.FrontButton
+          onClick={() => handleModal('register')}
+          variant="primary"
+        >
           Register
         </S.FrontButton>
-        <S.FrontButton onClick={() => handleModal('login')} color="#d6c7c7">
+        <S.FrontButton onClick={() => handleModal('login')} variant="secondary">
           Login
         </S.FrontButton>
       </div>
