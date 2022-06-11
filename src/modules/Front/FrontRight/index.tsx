@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import AuthModal from '../AuthModal';
+import Modal from 'modules/common/Modal';
+
+import LoginForm from '../LoginForm';
+import RegisterForm from '../RegisterForm';
+
 import * as S from './styles';
 
 type Props = {};
@@ -38,7 +42,9 @@ const FrontRight = (props: Props) => {
           Login
         </S.FrontButton>
       </div>
-      <AuthModal open={open} handleCloseModal={handleCloseModal} type={type} />
+      <Modal open={open} onClose={handleCloseModal}>
+        {type === 'login' ? <LoginForm /> : <RegisterForm />}
+      </Modal>
     </S.FrontRight>
   );
 };
