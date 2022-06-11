@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import * as S from './styles';
+
 interface IFormInputs {
   userName: string;
   email: string;
@@ -23,7 +24,7 @@ const schema = yup
       .oneOf([yup.ref('password')], 'Your passwords need to match'),
   })
   .required();
-const RegisterForm = () => {
+const RegisterForm: React.FC = () => {
   const {
     register,
     handleSubmit,

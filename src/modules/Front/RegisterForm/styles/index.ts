@@ -23,8 +23,7 @@ export const Form = styled.form`
 `;
 
 export const FormWrapper = styled.div`
-  width: 520px;
-  height: 720px;
-  background-color: ${(props) => props.theme.primary};
+  width: 100%;
+  height: 100%;
   border-radius: 6px;
 `;
