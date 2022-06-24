@@ -13,7 +13,7 @@ interface IFormInputs {
 
 const schema = yup
   .object({
-    userName: yup.string().min(8).max(32).required(),
+    userName: yup.string().min(4).max(16).required(),
     email: yup.string().email().required(),
     password: yup.string().min(8).max(32).required(),
     confirmPassword: yup
@@ -32,19 +32,30 @@ const RegisterForm: React.FC = () => {
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: IFormInputs) => console.log(data);
+  console.log(errors);
+  const onSubmit = handleSubmit((data) => console.log(data));
   return (
     <S.FormWrapper>
-      <S.Form>
+      <S.Form onSubmit={(e) => e.preventDefault()}>
         <div>
           <h4>Create your account</h4>
           <input placeholder="Username" {...register('userName')} />
+          <S.Error>{errors.userName && errors.userName.message}</S.Error>
           <input placeholder="Email" {...register('email')} />
+          <S.Error>{errors.email && errors.email.message}</S.Error>
           <input placeholder="Password" {...register('password')} />
+          <S.Error>{errors.password && errors.password.message}</S.Error>
           <input
             placeholder="Confirm Password"
             {...register('confirmPassword')}
           />
+          <S.Error>
+            {errors.confirmPassword && errors.confirmPassword.message}
+          </S.Error>
+
+          <button type="submit" onClick={onSubmit}>
+            Register
+          </button>
         </div>
       </S.Form>
     </S.FormWrapper>
