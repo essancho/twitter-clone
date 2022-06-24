@@ -6,6 +6,7 @@ export const StyledModal = styled(Modal)``;
 export const StyledModalInner = styled.div`
   position: relative;
   width: 640px;
+  max-height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;

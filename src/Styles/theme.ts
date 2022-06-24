@@ -4,4 +4,5 @@ export const theme = {
   light: '#D0CFCF',
   superLight: '#F5F5F5',
   accent: '#1693F3',
+  danger: '#B54049',
 };
