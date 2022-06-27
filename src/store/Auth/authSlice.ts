@@ -1,26 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import { ActionInterface } from './authTypes';
 
 interface InitialStateInterface {
-  user: string;
+  user: null | any;
 }
 
 const initialState: InitialStateInterface = {
-  user: 'User',
+  user: null,
 };
 
-export const authSlice = createSlice({
-  name: 'auth',
+export const registerSlice = createSlice({
+  name: 'register',
   initialState,
   reducers: {
-    createUser: (state) => {
-      return { ...state, user: 'Madd' };
+    registerUser: (state: InitialStateInterface, action: ActionInterface) => {
+      return { ...state, user: action.payload };
     },
   },
 });
 //Actions
-export const { createUser } = authSlice.actions;
+export const { registerUser } = registerSlice.actions;
 // Selectors
 export const currentUser = (state: RootState) => state.users.user;
 // Reducer
-export default authSlice.reducer;
+export default registerSlice.reducer;
