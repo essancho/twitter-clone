@@ -1,4 +1,4 @@
-import CloseButton from 'modules/common/CloseButton';
+import CloseButton from 'common/CloseButton';
 import React from 'react';
 
 import * as S from './styles';

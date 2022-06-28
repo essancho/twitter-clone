@@ -1,20 +1,24 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { registerActions } from './authActions';
 import { registerUser } from './authAPI';
+import { createUserError, createUserSuccess } from './authSlice';
 import { ActionInterface } from './authTypes';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 // Workers
-function* fetchUser(action: ActionInterface): Generator {
+function* createUserWorker(action: ActionInterface): Generator {
   try {
     // API CALL
     const user = yield call(registerUser, action.payload);
     // Sending to store
-    yield put({ type: 'USER_REGISTER_SUCCEEDED', user: user });
-  } catch (e) {
-    yield put({ type: 'USER_REGISTER_FAILED', error: e });
+    yield put(createUserSuccess({ user: user }));
+  } catch (e: any) {
+    console.error(e);
+    yield put(createUserError({ error: e.code }));
   }
 }
 // Watchers
-export function* fetchUserWatcher(): Generator {
-  yield takeEvery('USER_REGISTER_REQUESTED', fetchUser);
+export function* createUserWatcher(): Generator {
+  console.log('WATCHER');
+  yield takeLatest(registerActions.TRIGGER, createUserWorker);
 }
