@@ -6,6 +6,8 @@ import { schema } from './schemas';
 
 import * as S from './styles';
 import { NewUserInterface } from 'store/Auth/authTypes';
+import { registerActions } from 'store/Auth/authActions';
+import { useAppDispatch } from 'store/hooks';
 
 const RegisterForm: React.FC = () => {
   const {
@@ -16,7 +18,14 @@ const RegisterForm: React.FC = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const dispatch = useAppDispatch();
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    const test = registerActions(data);
+    console.log(test);
+    dispatch(registerActions(data));
+  });
 
   return (
     <S.FormWrapper>
